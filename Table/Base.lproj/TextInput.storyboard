@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Text Input View Controller-->
+        <scene sceneID="PvT-WJ-LJF">
+            <objects>
+                <viewController storyboardIdentifier="TextInputView" id="7wE-Lg-anZ" customClass="TextInputViewController" customModule="Table" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6ML-b3-LbV"/>
+                        <viewControllerLayoutGuide type="bottom" id="F9m-lj-62c"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Wc0-dE-lMu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hIJ-bh-qOs">
+                                <rect key="frame" x="20" y="104" width="560" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="7wE-Lg-anZ" eventType="touchUpInside" id="nk9-E8-ETA"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Preview Text" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uDw-Ir-TKz">
+                                <rect key="frame" x="20" y="66" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pmy-JU-H4E">
+                                <rect key="frame" x="20" y="154" width="560" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <segue destination="L44-be-4PL" kind="unwind" unwindAction="cancelTextInput:" id="64J-Ea-AUw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.84416429924242431" green="0.84416429924242431" blue="0.84416429924242431" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="uDw-Ir-TKz" firstAttribute="leading" secondItem="Wc0-dE-lMu" secondAttribute="leadingMargin" id="IFd-aw-XM7"/>
+                            <constraint firstItem="hIJ-bh-qOs" firstAttribute="top" secondItem="uDw-Ir-TKz" secondAttribute="bottom" constant="8" id="KVf-rL-yg0"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="hIJ-bh-qOs" secondAttribute="leading" id="SLg-KW-BV5"/>
+                            <constraint firstItem="pmy-JU-H4E" firstAttribute="leading" secondItem="Wc0-dE-lMu" secondAttribute="leadingMargin" id="bTZ-rk-IqL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="uDw-Ir-TKz" secondAttribute="trailing" id="lju-M1-hjl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pmy-JU-H4E" secondAttribute="trailing" id="pBc-bJ-SS5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hIJ-bh-qOs" secondAttribute="trailing" id="pr1-8u-WZR"/>
+                            <constraint firstItem="pmy-JU-H4E" firstAttribute="top" secondItem="hIJ-bh-qOs" secondAttribute="bottom" constant="20" id="s2Q-Vf-sii"/>
+                            <constraint firstItem="uDw-Ir-TKz" firstAttribute="top" secondItem="6ML-b3-LbV" secondAttribute="bottom" constant="46" id="x8u-af-NFA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchTermInputField" destination="uDw-Ir-TKz" id="hNa-tH-0uE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SiS-nX-Q5d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="L44-be-4PL" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2369" y="376"/>
+        </scene>
+    </scenes>
+</document>
